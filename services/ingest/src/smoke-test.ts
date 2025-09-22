@@ -1,4 +1,4 @@
-import { loadEnvConfig } from "./config/env.js";
+import { loadEnvConfig } from "./config/env.ts";
 
 const main = async () => {
   const config = await loadEnvConfig();

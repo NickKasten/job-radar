@@ -27,7 +27,7 @@ services:
     env: node
     schedule: "0 13 * * *"
     buildCommand: npm install && npm run build --workspace services/ingest
-    startCommand: node services/ingest/dist/index.js
+    startCommand: dagger run npm run dagger:dev
     envVars:
       - key: SUPABASE_URL
         sync: false

@@ -20,7 +20,7 @@ export const listJobs = async (params: ListJobsParams): Promise<JobRecord[]> => 
     .select(
       "id, title, company, location, remote, url, source, tags, scraped_for_date, posted_at, created_at, updated_at, salary_min, salary_max, salary_currency",
     )
-    .order("posted_at", { ascending: false, nullsLast: true })
+    .order("posted_at", { ascending: false, nullsFirst: false })
     .order("created_at", { ascending: false });
 
   if (params.date) {
@@ -120,7 +120,7 @@ export const listBigTechOpenings = async (category?: string): Promise<BigTechOpe
 export const listAvailableDates = async (): Promise<string[]> => {
   const { data, error } = await supabase
     .from(JOBS_TABLE)
-    .select("scraped_for_date", { distinct: true })
+    .select("scraped_for_date")
     .order("scraped_for_date", { ascending: false });
 
   if (error) {
@@ -128,7 +128,13 @@ export const listAvailableDates = async (): Promise<string[]> => {
     throw new Error("Unable to load job dates");
   }
 
-  return (data ?? [])
-    .map((row) => row.scraped_for_date as string)
-    .filter((value): value is string => Boolean(value));
+  const seen = new Set<string>();
+
+  for (const row of data ?? []) {
+    if (row.scraped_for_date) {
+      seen.add(row.scraped_for_date as string);
+    }
+  }
+
+  return Array.from(seen);
 };
