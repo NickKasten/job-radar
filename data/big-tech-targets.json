@@ -1,0 +1,116 @@
+[
+  {
+    "company": "Stripe",
+    "board": "greenhouse",
+    "boardKey": "stripe",
+    "category": "Fintech",
+    "filters": {
+      "titleIncludes": ["Software Engineer", "New Grad"],
+      "employmentType": ["Full-time"],
+      "experience": ["Entry Level"]
+    }
+  },
+  {
+    "company": "Dropbox",
+    "board": "greenhouse",
+    "boardKey": "dropbox",
+    "category": "Cloud",
+    "filters": {
+      "titleIncludes": ["Software Engineer"],
+      "experience": ["Early Career", "University Graduate"],
+      "tags": ["New Grad"]
+    }
+  },
+  {
+    "company": "Databricks",
+    "board": "greenhouse",
+    "boardKey": "databricks",
+    "category": "AI",
+    "filters": {
+      "titleIncludes": ["Software Engineer", "University Graduate"],
+      "locations": ["United States", "Remote"]
+    }
+  },
+  {
+    "company": "Snowflake",
+    "board": "workday",
+    "boardKey": "snowflakeinc",
+    "category": "Cloud",
+    "filters": {
+      "titleIncludes": ["Software Engineer", "New Grad"],
+      "jobFamily": ["Engineering"]
+    }
+  },
+  {
+    "company": "Amazon",
+    "board": "workday",
+    "boardKey": "amazonjobs",
+    "category": "Big Tech",
+    "filters": {
+      "titleIncludes": ["Software Development Engineer I"],
+      "locations": ["United States"],
+      "keywords": ["New Grad", "Entry Level"]
+    }
+  },
+  {
+    "company": "Microsoft",
+    "board": "workday",
+    "boardKey": "microsoft",
+    "category": "Big Tech",
+    "filters": {
+      "titleIncludes": ["Software Engineer", "University"],
+      "jobFamily": ["Software Engineering"]
+    }
+  },
+  {
+    "company": "Meta",
+    "board": "workday",
+    "boardKey": "metacareers",
+    "category": "Big Tech",
+    "filters": {
+      "titleIncludes": ["Software Engineer"],
+      "keywords": ["University Graduate", "New Grad"]
+    }
+  },
+  {
+    "company": "Nvidia",
+    "board": "workday",
+    "boardKey": "nvidia",
+    "category": "AI",
+    "filters": {
+      "titleIncludes": ["Software Engineer"],
+      "keywords": ["New College Graduate"]
+    }
+  },
+  {
+    "company": "OpenAI",
+    "board": "greenhouse",
+    "boardKey": "openai",
+    "category": "AI",
+    "filters": {
+      "titleIncludes": ["Software Engineer", "University"],
+      "tags": ["New Grad"]
+    }
+  },
+  {
+    "company": "Apple",
+    "board": "phdcareers",
+    "boardKey": "apple",
+    "category": "Big Tech",
+    "filters": {
+      "keywords": ["Entry-Level", "Software"],
+      "notes": "Requires official Apple Careers API or manual curation."
+    }
+  },
+  {
+    "company": "LinkedIn",
+    "board": "linkedin",
+    "boardKey": "linkedin-jobs",
+    "category": "Big Tech",
+    "filters": {
+      "titleIncludes": ["Software Engineer"],
+      "keywords": ["New Grad"],
+      "notes": "Use official LinkedIn Talent Solutions APIs; scraping is not permitted."
+    }
+  }
+]

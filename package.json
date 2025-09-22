@@ -1,0 +1,22 @@
+{
+  "name": "app-scraper",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/mobile",
+    "services/api",
+    "services/ingest",
+    "dagger"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace services/api",
+    "build:api": "npm run build --workspace services/api",
+    "start:api": "npm run start --workspace services/api",
+    "ingest:run": "npm run start --workspace services/ingest",
+    "ingest:test": "npm run test --workspace services/ingest",
+    "mobile:start": "npm run start --workspace apps/mobile",
+    "mobile:web": "npm run web --workspace apps/mobile",
+    "dagger:dev": "npm run dev --workspace dagger",
+    "dagger:publish": "npm run build --workspace dagger"
+  }
+}

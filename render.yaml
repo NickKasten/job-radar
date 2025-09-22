@@ -1,0 +1,39 @@
+services:
+  - type: static
+    name: job-radar-web
+    env: static
+    buildCommand: npm install && npm run web --workspace apps/mobile -- --clear
+    staticPublishPath: apps/mobile/dist
+    envVars:
+      - key: EXPO_PUBLIC_API_URL
+        value: https://job-radar-api.onrender.com
+  - type: web
+    name: job-radar-api
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build:api
+    startCommand: npm run start:api
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://job-radar-web.onrender.com
+  - type: cron
+    name: job-radar-ingest
+    env: node
+    schedule: "0 13 * * *"
+    buildCommand: npm install && npm run build --workspace services/ingest
+    startCommand: node services/ingest/dist/index.js
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: TARGET_COMPANY_CONFIG
+        value: data/big-tech-targets.json
+      - key: DEFAULT_TIMEZONE
+        value: UTC
